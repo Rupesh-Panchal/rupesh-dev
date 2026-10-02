@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+	/* Dark mode - default */
+	--grid-color: rgba(120, 149, 168, 0.055);
+	--grid-blue-glow: rgba(120, 149, 168, 0.06);
+	--grid-warm-glow: rgba(180, 154, 120, 0.025);
+
+	--bg-primary: #0d1014;
+	--bg-secondary: #11151a;
+	--bg-card: #151a20;
+
+	--text-primary: #e7e8ea;
+	--text-secondary: #a9afb7;
+	--text-muted: #747c85;
+
+	--border-color: rgba(255, 255, 255, 0.08);
+
+	--bg-hover: #20262d;
+	--accent-primary: #7895a8;
+	--accent-hover: #adcbdf;
+	--accent-text: #0e2d3d;
+}
+
+html.light-mode {
+	/* Light mode */
+	--grid-color: rgba(93, 119, 136, 0.075);
+	--grid-blue-glow: rgba(93, 119, 136, 0.04);
+	--grid-warm-glow: rgba(167, 134, 98, 0.025);
+
+	--bg-primary: #f4f2ee;
+	--bg-secondary: #eceae5;
+	--bg-card: #f8f7f4;
+
+	--text-primary: #20252a;
+	--text-secondary: #535b64;
+	--text-muted: #808993;
+
+	--border-color: rgba(35, 42, 48, 0.10);
+
+	--bg-hover: #ffffff;
+	--accent-primary: #527083;
+	--accent-hover: #7895a8;
+	--accent-text: #ffffff;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: var(--bg-primary);
+}
+
+body {
+	min-height: 100vh;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+/* Technical background grid */
+.technical-grid-layer {
+	position: absolute;
+	inset: 0;
+
+	background-image:
+		linear-gradient(var(--grid-color) 1px, transparent 1px),
+		linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+
+	background-size: 48px 48px;
+	background-repeat: repeat;
+
+	mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 0.85) 15%,
+		rgba(0, 0, 0, 0.45) 35%,
+		rgba(0, 0, 0, 0.2) 60%,
+		rgba(0, 0, 0, 0.35) 90%,
+		rgba(0, 0, 0, 0.5) 100%
+	);
+
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 0.85) 15%,
+		rgba(0, 0, 0, 0.45) 35%,
+		rgba(0, 0, 0, 0.2) 60%,
+		rgba(0, 0, 0, 0.35) 90%,
+		rgba(0, 0, 0, 0.5) 100%
+	);
+}
+
+/* Blue-gray ambient glow */
+.ambient-radial-glow-blue {
+	background: radial-gradient(
+		circle at 50% 18%,
+		var(--grid-blue-glow) 0%,
+		transparent 60%
+	);
+}
+
+/* Warm ambient glow */
+.ambient-radial-glow-warm {
+	background: radial-gradient(
+		circle at 65% 25%,
+		var(--grid-warm-glow) 0%,
+		transparent 45%
+	);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+	.technical-grid-layer {
+		background-size: 40px 40px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+	.technical-grid-layer {
+		background-size: 32px 32px;
+	}
+}
