@@ -121,26 +121,6 @@ function Skills() {
                     </div>
                 ))}
             </div>
-
-            {/* Core Strengths Footer */}
-            <div
-                className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-3 px-4 py-3.5 rounded-xl"
-                style={{
-                    backgroundColor: "var(--bg-secondary)",
-                    border: "1px solid var(--border-color)",
-                }}
-            >
-                <div className="text-xs md:text-sm" style={{ color: "var(--text-primary)" }}>
-                    <strong className="font-semibold" style={{ color: "var(--accent-primary)" }}>
-                        Core Strengths:
-                    </strong>{" "}
-                    API Development · Backend Logic · Database Optimization · RBAC · Production Systems
-                </div>
-
-                <div className="text-xs font-mono shrink-0" style={{ color: "var(--text-muted)" }}>
-                    Professional focus: Backend systems · REST APIs · Database-driven applications
-                </div>
-            </div>
         </section>
     );
 }

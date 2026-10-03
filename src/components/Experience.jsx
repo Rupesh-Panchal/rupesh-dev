@@ -33,7 +33,7 @@ function Experience() {
     ];
 
     return (
-        <section id="experience" className="relative max-w-[1240px] mx-auto px-5 md:px-12 py-16">
+        <section id="experience" className="relative max-w-[1240px] mx-auto px-5 md:px-12 pt-9 pb-17">
             {/* SECTION HEADER */}
             <div className="mb-12">
                 <span className="text-[11px] uppercase tracking-wider font-mono" style={{ color: "#dec29e" }}>
