@@ -4,6 +4,8 @@ import Hero from "./components/Hero";
 import QuickStats from "./components/QuickStats";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 
 function App() {
 	return (
@@ -15,7 +17,9 @@ function App() {
 				<QuickStats />
 				<AboutMe />
                 <Skills />
-			</main>
+                <Experience />
+                <Projects />
+            </main>
 		</>
 	);
 }
