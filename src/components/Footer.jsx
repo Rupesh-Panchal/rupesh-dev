@@ -19,15 +19,11 @@ function Footer() {
         >
             {/* Main Footer Content */}
             <div className="max-w-[1240px] mx-auto px-5 md:px-12 py-14 md:py-16">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-12">
                     {/* COLUMN 1 — BRAND */}
-                    <div className="lg:col-span-1">
+                    <div className="col-span-2 lg:col-span-1">
                         {/* Brand */}
-                        <a
-                            href="#about"
-                            className="group inline-flex items-center gap-3"
-                        >
+                        <a href="#about" className="group inline-flex items-center gap-3">
                             {/* RP Monogram */}
                             <div
                                 className="w-10 h-10 rounded-[10px] flex items-center justify-center shrink-0 transition-all duration-200 group-hover:-translate-y-0.5"
@@ -218,7 +214,7 @@ function Footer() {
                     </div>
 
                     {/* COLUMN 4 — GET IN TOUCH */}
-                    <div>
+                    <div className="col-span-2 lg:col-span-1">
                         <h3
                             className="font-semibold text-[14px] tracking-wide uppercase"
                             style={{
@@ -228,7 +224,7 @@ function Footer() {
                             Get In Touch
                         </h3>
 
-                        <div className="mt-6 space-y-4">
+                        <div className="mt-6 flex flex-col items-start gap-4">
                             <a
                                 href="mailto:rupeshpanchal509@gmail.com"
                                 className="flex items-center gap-2 text-[14px] transition-colors duration-200 hover:text-[var(--accent-primary)]"
@@ -295,18 +291,15 @@ function Footer() {
             </div>
 
             {/* Bottom Footer Bar */}
-            <div
-                className="border-t"
+            <div className="border-t"
                 style={{
                     borderColor: "var(--border-color)",
                     backgroundColor: "var(--bg-primary)",
                 }}
             >
-                <div className="max-w-[1240px] mx-auto px-5 md:px-12 pt-5 pb-22 flex flex-col md:flex-row items-center justify-between gap-5">
-
+                <div className="max-w-[1240px] mx-auto px-5 md:px-12 pt-5 pb-10 md:pb-22 flex flex-col md:flex-row items-center justify-between gap-5">
                     {/* Copyright */}
-                    <span
-                        className="text-[12px] font-mono"
+                    <span className="text-[12px] font-mono"
                         style={{
                             color: "var(--text-muted)",
                         }}
@@ -314,8 +307,7 @@ function Footer() {
                         © 2026 Rupesh Panchal. All rights reserved.
                     </span>
 
-                    <span
-                        className="text-[13px] font-medium pr-25"
+                    <span className="text-[13px] font-medium"
                         style={{
                             color: "var(--accent-primary)",
                         }}

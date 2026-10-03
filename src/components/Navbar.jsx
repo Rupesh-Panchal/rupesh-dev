@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FiFileText, FiMoon, FiUser, FiMenu } from "react-icons/fi";
+import { FiFileText, FiMoon, FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
     const [isDark, setIsDark] = useState(true);
     const [activeSection, setActiveSection] = useState("about");
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("rupesh_theme");
@@ -64,6 +65,7 @@ function Navbar() {
 
     const handleNavClick = (sectionId) => {
         setActiveSection(sectionId);
+        setIsMobileMenuOpen(false);
 
         const section = document.getElementById(sectionId);
 
@@ -159,17 +161,42 @@ function Navbar() {
 						<FiMoon className="w-[18px] h-[18px]" />
 					</button>
 
-					{/* Profile */}
-					<div className="w-8 h-8 rounded-full bg-[var(--accent-primary)] flex items-center justify-center ml-1">
-						<FiUser className="w-[18px] h-[18px] text-[var(--accent-text)]" />
-					</div>
-
 					{/* Mobile Menu */}
-					<button type="button" aria-label="Toggle mobile menu" className="lg:hidden w-9 h-9 rounded-lg bg-[var(--bg-secondary)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] transition-all">
-						<FiMenu className="w-5 h-5" />
-					</button>
+					<button type="button" aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"} onClick={() => setIsMobileMenuOpen((open) => !open)} 
+                        className="lg:hidden w-9 h-9 rounded-lg bg-[var(--bg-secondary)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] transition-all"
+                    >
+                        {isMobileMenuOpen ? (
+                            <FiX className="w-5 h-5" />
+                        ) : (
+                            <FiMenu className="w-5 h-5" />
+                        )}
+                    </button>
 				</div>
 			</div>
+
+            {isMobileMenuOpen && (
+                <div className="lg:hidden border-t border-[var(--border-color)] bg-[var(--bg-card)]/95 backdrop-blur-xl shadow-lg">
+                    <nav className="px-5 py-4">
+                        <div className="flex flex-col gap-1">
+                            {navItems.map((item) => {
+                                const isActive = activeSection === item.id;
+
+                                return (
+                                    <button key={item.id} type="button" onClick={() => handleNavClick(item.id)}
+                                        className={`w-full text-left px-4 py-3 rounded-lg text-[14px] transition-all ${
+                                            isActive
+                                                ? "bg-[var(--accent-primary)] text-[var(--accent-text)] font-semibold"
+                                                : "text-[var(--text-secondary)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)]"
+                                        }`}
+                                    >
+                                        {item.label}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </nav>
+                </div>
+            )}
 
             {/* Scroll Progress / Loading Line */}
             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[var(--bg-secondary)]/60">

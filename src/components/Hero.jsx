@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Hero() {
 	return (
-		<section id="about" className="max-w-[1240px] mx-auto px-5 md:px-12 pt-12 md:pt-20 pb-20 relative">
+		<section id="about" className="max-w-[1240px] mx-auto px-5 md:px-12 pt-24 md:pt-20 pb-20 relative">
 			<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 {/* LEFT COLUMN */}
 				<div className="lg:col-span-7 flex flex-col space-y-6">
