@@ -53,7 +53,7 @@ function Skills() {
             {/* Section Header */}
             <div className="flex flex-col space-y-2 mb-10">
                 <span className="text-[11px] uppercase tracking-wider font-mono" style={{ color: "#dec29e" }}>
-                    02 // TECHNICAL CAPABILITIES
+                    02. TECHNICAL CAPABILITIES
                 </span>
 
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" style={{ color: "var(--text-primary)" }}>

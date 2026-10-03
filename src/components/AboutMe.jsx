@@ -65,7 +65,7 @@ function AboutMe() {
 								<div className="absolute bottom-3 left-3 right-3 flex items-center justify-between px-3 py-1.5 rounded-lg backdrop-blur-md" style={{ backgroundColor: "rgba(13, 16, 20, 0.72)", border: "1px solid rgba(255,255,255,0.05)", }}>
 									<span className="flex items-center gap-1.5 text-xs font-mono" style={{ color: "var(--accent-primary)", }}>
 										<span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--accent-primary)", }} />
-										Online
+										Open to work
 									</span>
 
 									<span className="text-xs font-mono" style={{ color: "var(--text-muted)" }}>
@@ -130,7 +130,7 @@ function AboutMe() {
 				{/* RIGHT — ABOUT CONTENT */}
 				<div className="w-full flex flex-col justify-start">
 					<span className="text-[11px] uppercase tracking-wider font-mono" style={{ color: "#dec29e" }}>
-						01 // ABOUT ME
+						01. ABOUT ME
 					</span>
 
 					<h2 className="text-3xl lg:text-4xl font-bold tracking-tight leading-snug mt-3 mb-5" style={{ color: "var(--text-primary)" }}>

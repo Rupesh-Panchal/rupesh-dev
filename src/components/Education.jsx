@@ -6,7 +6,7 @@ function Education() {
             {/* SECTION HEADER */}
             <div className="flex flex-col space-y-2 mb-8">
                 <span className="text-[11px] uppercase tracking-wider font-mono" style={{ color: "#dec29e" }}>
-                    05 // Academic Foundation
+                    05. Academic Foundation
                 </span>
 
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" style={{ color: "var(--text-primary)" }}>

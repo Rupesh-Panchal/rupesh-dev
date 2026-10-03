@@ -37,7 +37,7 @@ function Experience() {
             {/* SECTION HEADER */}
             <div className="mb-12">
                 <span className="text-[11px] uppercase tracking-wider font-mono" style={{ color: "#dec29e" }}>
-                    03 // CAREER PATH
+                    03. CAREER PATH
                 </span>
 
                 <div className="flex flex-wrap items-center gap-3 mt-2">

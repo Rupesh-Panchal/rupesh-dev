@@ -64,7 +64,7 @@ function Projects() {
         {
             number: "04",
             label: "LARSSIE · Client Production · ENATS",
-            title: "Larssie — Sports Event Management System",
+            title: "Larssie — Passion for Sports",
             description: "Sports event management system built on OpenCart with customized MVC functionality and optimized database workflows.",
             points: [
                 "Customized OpenCart MVC architecture engineered for large-scale sports bookings",
@@ -84,7 +84,7 @@ function Projects() {
             {/* SECTION HEADER */}
             <div className="flex flex-col space-y-2 mb-12">
                 <span className="text-[11px] uppercase tracking-wider font-mono" style={{ color: "#dec29e" }}>
-                    04 // Portfolio & Case Studies
+                    04. Portfolio & Case Studies
                 </span>
 
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" style={{ color: "var(--text-primary)" }}>
@@ -117,7 +117,7 @@ function Projects() {
                                             border: "1px solid rgba(180, 154, 120, 0.20)",
                                         }}
                                     >
-                                        {project.number} // {project.label}
+                                        {project.number}. {project.label}
                                     </span>
 
                                     {project.featured && (
@@ -265,7 +265,7 @@ function Projects() {
                                             border: "1px solid rgba(180, 154, 120, 0.20)",
                                         }}
                                     >
-                                        {project.number} // {project.label}
+                                        {project.number}. {project.label}
                                     </span>
                                 </div>
 

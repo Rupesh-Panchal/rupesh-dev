@@ -59,7 +59,7 @@ function Contact() {
                     {/* HEADER */}
                     <div className="space-y-2">
                         <span className="text-[11px] uppercase tracking-wider font-mono" style={{ color: "#dec29e" }}>
-                            06 // Connect
+                            06. Connect
                         </span>
 
                         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" style={{ color: "var(--text-primary)" }}>
