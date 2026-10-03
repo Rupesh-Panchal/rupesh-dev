@@ -4,6 +4,8 @@ import { FiFileText, FiMoon, FiUser, FiMenu } from "react-icons/fi";
 
 function Navbar() {
     const [isDark, setIsDark] = useState(true);
+    const [activeSection, setActiveSection] = useState("about");
+    const [scrollProgress, setScrollProgress] = useState(0);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("rupesh_theme");
@@ -17,6 +19,64 @@ function Navbar() {
             setIsDark(true);
         }
     }, []);
+
+    const navItems = [
+        { id: "about", label: "About" },
+        { id: "skills", label: "Skills" },
+        { id: "experience", label: "Experience" },
+        { id: "projects", label: "Projects" },
+        { id: "education", label: "Education" },
+        { id: "contact", label: "Contact" },
+    ];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = documentHeight > 0 ? (scrollTop / documentHeight) * 100 : 0;
+
+            setScrollProgress(progress);
+
+            const sections = navItems.map((item) => document.getElementById(item.id)).filter(Boolean);
+
+            let currentSection = "about";
+            const navbarOffset = 120;
+
+            for (const section of sections) {
+                if (scrollTop >= section.offsetTop - navbarOffset) {
+                    currentSection = section.id;
+                }
+            }
+
+            setActiveSection(currentSection);
+        };
+
+        handleScroll();
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        window.addEventListener("resize", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
+        };
+    }, []);
+
+    const handleNavClick = (sectionId) => {
+        setActiveSection(sectionId);
+
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            const navbarHeight = 64;
+            const targetPosition = section.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+            });
+        }
+    };
 
     const toggleTheme = () => {
         if (document.documentElement.classList.contains("dark")) {
@@ -59,12 +119,21 @@ function Navbar() {
 
 				{/* Desktop Navigation */}
 				<nav className="hidden lg:flex items-center gap-1 p-1 bg-[var(--bg-secondary)]/60 rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.2)]">
-					<a href="#about" className="px-4 py-1.5 bg-[var(--accent-primary)] text-[var(--accent-text)] font-semibold text-[13px] rounded-full transition-all">About</a>
-					<a href="#skills" className="px-4 py-1.5 text-[13px] text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] rounded-full transition-all">Skills</a>
-					<a href="#experience" className="px-4 py-1.5 text-[13px] text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] rounded-full transition-all">Experience</a>
-					<a href="#projects" className="px-4 py-1.5 text-[13px] text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] rounded-full transition-all">Projects</a>
-					<a href="#education" className="px-4 py-1.5 text-[13px] text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] rounded-full transition-all">Education</a>
-					<a href="#contact" className="px-4 py-1.5 text-[13px] text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] rounded-full transition-all">Contact</a>
+					{navItems.map((item) => {
+                        const isActive = activeSection === item.id;
+
+                        return (
+                            <button key={item.id} type="button" onClick={() => handleNavClick(item.id)}
+                                className={`px-4 py-1.5 text-[13px] rounded-full transition-all ${
+                                    isActive
+                                        ? "bg-[var(--accent-primary)] text-[var(--accent-text)] font-semibold"
+                                        : "text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)]"
+                                }`}
+                            >
+                                {item.label}
+                            </button>
+                        );
+                    })}
 				</nav>
 
 				{/* Right Controls */}
@@ -101,6 +170,17 @@ function Navbar() {
 					</button>
 				</div>
 			</div>
+
+            {/* Scroll Progress / Loading Line */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[var(--bg-secondary)]/60">
+                <div className="h-full transition-[width] duration-75 ease-out"
+                    style={{
+                        width: `${scrollProgress}%`,
+                        backgroundColor: "var(--accent-primary)",
+                        boxShadow: "0 0 8px var(--accent-primary)",
+                    }}
+                />
+            </div>
 		</header>
 	);
 }
