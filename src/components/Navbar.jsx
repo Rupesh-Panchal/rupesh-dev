@@ -141,10 +141,10 @@ function Navbar() {
 				{/* Right Controls */}
 				<div className="flex items-center gap-2">
 					{/* Resume */}
-					<a href="#" aria-label="Download Resume" className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[12px] font-medium text-[var(--accent-text)] bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] hover:text-[var(--accent-text)] transition-all">
-						<FiFileText className="w-3.5 h-3.5 mr-1.5" />
-						Resume
-					</a>
+					<a href="https://docs.google.com/document/d/1Bm0HV1IlATl0gAZNY3-efCHe6_e9I8qz4xg0nLYy45c/edit?tab=t.0" target="_blank" rel="noopener noreferrer" aria-label="View Resume" className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[12px] font-medium text-[var(--accent-text)] bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] hover:text-[var(--accent-text)] transition-all">
+                        <FiFileText className="w-3.5 h-3.5 mr-1.5" />
+                        Resume
+                    </a>
 
 					{/* GitHub */}
 					<a href="https://github.com/Rupesh-Panchal" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-[var(--bg-secondary)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] transition-all">

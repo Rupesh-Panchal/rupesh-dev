@@ -124,3 +124,20 @@ body {
 		background-size: 32px 32px;
 	}
 }
+
+/* Theme-specific profile images */
+.profile-image-dark {
+	display: block;
+}
+
+.profile-image-light {
+	display: none;
+}
+
+html.light-mode .profile-image-dark {
+	display: none;
+}
+
+html.light-mode .profile-image-light {
+	display: block;
+}

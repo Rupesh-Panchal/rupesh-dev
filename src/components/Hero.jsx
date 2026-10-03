@@ -1,4 +1,4 @@
-import { FiMapPin, FiArrowRight, FiTerminal, FiMonitor, FiServer, FiDatabase, } from "react-icons/fi";
+import { FiMapPin, FiArrowRight, FiDownload, FiTerminal, FiMonitor, FiServer, FiDatabase, } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Hero() {
@@ -83,27 +83,39 @@ function Hero() {
 						</div>
 					</div>
 
-					{/* Action Buttons */}
-					<div className="flex flex-wrap items-center gap-3 pt-4">
-						<a href="#projects" className="px-6 py-2.5 rounded bg-[var(--accent-primary)] text-[var(--accent-text)] font-semibold text-[13px] shadow-md hover:bg-[var(--accent-hover)] transition-all flex items-center gap-2">
-							<span>View My Work</span>
-							<FiArrowRight className="w-4 h-4" />
-						</a>
+                    {/* Action Buttons */}
+                    <div className="pt-4">
+                        <div className="grid grid-cols-2 gap-3 md:flex md:flex-nowrap md:items-center">
+                            {/* View My Work */}
+                            <a href="#projects" className="col-span-2 md:col-span-1 md:flex-1 min-w-0 h-11 px-5 md:px-6 rounded bg-[var(--accent-primary)] text-[var(--accent-text)] font-semibold text-[13px] shadow-md hover:bg-[var(--accent-hover)] transition-all flex items-center justify-center gap-2 md:whitespace-nowrap">
+                                <span>View My Work</span>
+                                <FiArrowRight className="w-4 h-4 shrink-0" />
+                            </a>
 
-						<a href="#contact" className="px-6 py-2.5 rounded bg-[var(--bg-hover)] text-[var(--text-primary)] font-medium text-[13px] hover:bg-[var(--bg-secondary)] transition-all shadow-sm">
-							Get In Touch
-						</a>
+                            {/* Get In Touch */}
+                            <a href="#contact" className="md:flex-1 min-w-0 h-11 px-3 md:px-4 rounded bg-[var(--bg-hover)] text-[var(--text-primary)] font-medium text-[13px] hover:bg-[var(--bg-secondary)] transition-all shadow-sm flex items-center justify-center md:whitespace-nowrap">
+                                Get In Touch
+                            </a>
 
-						<div className="flex items-center gap-2 ml-auto sm:ml-0">
-							<a aria-label="GitHub Profile" href="https://github.com/Rupesh-Panchal" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded bg-[var(--bg-hover)] text-[var(--text-secondary)] hover:text-[var(--accent-hover)] flex items-center justify-center transition-colors">
-								<FaGithub className="w-4 h-4" />
-							</a>
+                            {/* Resume */}
+                            <a href="https://docs.google.com/document/d/1Bm0HV1IlATl0gAZNY3-efCHe6_e9I8qz4xg0nLYy45c/edit?tab=t.0" target="_blank" rel="noopener noreferrer" className="md:flex-1 min-w-0 h-11 px-3 md:px-4 rounded bg-[var(--bg-hover)] text-[var(--text-primary)] font-medium text-[13px] hover:bg-[var(--bg-secondary)] transition-all shadow-sm flex items-center justify-center gap-2 md:whitespace-nowrap">
+                                <span>Resume</span>
+                                <FiDownload className="w-4 h-4 shrink-0" />
+                            </a>
 
-							<a aria-label="LinkedIn Profile" href="https://linkedin.com/in/rupesh-panchal-528716261" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded bg-[var(--bg-hover)] text-[var(--text-secondary)] hover:text-[var(--accent-hover)] flex items-center justify-center transition-colors">
-								<FaLinkedin className="w-4 h-4" />
-							</a>
-						</div>
-					</div>
+                            {/* GitHub */}
+                            <a href="https://github.com/Rupesh-Panchal" target="_blank" rel="noopener noreferrer" className="md:flex-1 min-w-0 h-11 px-3 md:px-4 rounded bg-[var(--bg-hover)] text-[var(--text-secondary)] hover:text-[var(--accent-hover)] transition-colors text-[13px] font-medium flex items-center justify-center gap-2 md:whitespace-nowrap">
+                                <FaGithub className="w-4 h-4 shrink-0" />
+                                <span>GitHub</span>
+                            </a>
+
+                            {/* LinkedIn */}
+                            <a href="https://linkedin.com/in/rupesh-panchal-528716261" target="_blank" rel="noopener noreferrer" className="md:flex-1 min-w-0 h-11 px-3 md:px-4 rounded bg-[var(--bg-hover)] text-[var(--text-secondary)] hover:text-[var(--accent-hover)] transition-colors text-[13px] font-medium flex items-center justify-center gap-2 md:whitespace-nowrap">
+                                <FaLinkedin className="w-4 h-4 shrink-0" />
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
 				</div>
 
                 {/* RIGHT COLUMN */}

@@ -55,7 +55,11 @@ function AboutMe() {
 						{/* Profile image area */}
 						<div>
 							<div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-hover)", }}>
-								<img src="/rupesh-profile.png" alt="Rupesh Panchal - Full Stack Developer" className="w-full h-full object-cover object-center" />
+                                {/* Dark mode image */}
+                                <img src="/rupesh-profile-dark-mode.png" alt="Rupesh Panchal - Full Stack Developer" className="profile-image-dark w-full h-full object-cover object-center" />
+
+                                {/* Light mode image */}
+                                <img src="/rupesh-profile-light-mode.png" alt="Rupesh Panchal - Full Stack Developer" className="profile-image-light hidden w-full h-full object-cover object-center" />
 
 								{/* Bottom image information */}
 								<div className="absolute bottom-3 left-3 right-3 flex items-center justify-between px-3 py-1.5 rounded-lg backdrop-blur-md" style={{ backgroundColor: "rgba(13, 16, 20, 0.72)", border: "1px solid rgba(255,255,255,0.05)", }}>

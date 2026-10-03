@@ -272,9 +272,7 @@ function Footer() {
                             </div>
 
                             {/* CTA */}
-                            <a
-                                href="#contact"
-                                className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-all duration-200 hover:-translate-y-0.5"
+                            <a href="#contact" className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-all duration-200 hover:-translate-y-0.5"
                                 style={{
                                     backgroundColor:
                                         "var(--accent-primary)",
@@ -307,13 +305,13 @@ function Footer() {
                         © 2026 Rupesh Panchal. All rights reserved.
                     </span>
 
-                    <span className="text-[13px] font-medium"
+                    <button type="button" onClick={scrollToTop} className="text-[13px] font-medium transition-colors duration-200 hover:text-[var(--accent-hover)] cursor-pointer"
                         style={{
                             color: "var(--accent-primary)",
                         }}
                     >
                         Back to top
-                    </span>
+                    </button>
                 </div>
             </div>
         </footer>
