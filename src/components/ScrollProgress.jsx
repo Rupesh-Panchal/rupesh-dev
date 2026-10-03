@@ -27,8 +27,15 @@ function ScrollProgress() {
         };
     }, []);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     return (
-        <div className="fixed right-6 bottom-6 md:right-8 md:bottom-8 z-40 w-14 h-14 rounded-full p-[2px] pointer-events-none"
+        <button type="button" aria-label="Back to top" onClick={scrollToTop} className="fixed right-6 bottom-6 md:right-8 md:bottom-8 z-40 w-14 h-14 rounded-full p-[2px] cursor-pointer"
             style={{
                 background: `conic-gradient(var(--accent-primary) ${progress}%, var(--border-color) ${progress}% 100%)`,
                 boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
@@ -42,7 +49,7 @@ function ScrollProgress() {
             >
                 <FiArrowUp className="w-5 h-5" />
             </div>
-        </div>
+        </button>
     );
 }
 
