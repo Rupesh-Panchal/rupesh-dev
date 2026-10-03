@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FiFileText, FiMoon, FiMenu, FiX } from "react-icons/fi";
+import { FiFileText, FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
     const [isDark, setIsDark] = useState(true);
@@ -157,9 +157,19 @@ function Navbar() {
 					</a>
 
 					{/* Theme Toggle */}
-					<button type="button" aria-label="Toggle color mode"  onClick={toggleTheme} className="w-9 h-9 rounded-lg bg-[var(--bg-secondary)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent-hover)] hover:bg-[var(--bg-hover)] transition-all">
-						<FiMoon className="w-[18px] h-[18px]" />
-					</button>
+					<button type="button" aria-label="Toggle color mode" onClick={toggleTheme}
+                        className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
+                            isDark
+                                ? "bg-[var(--bg-secondary)] text-[var(--accent-warm)]"
+                                : "bg-[var(--accent-primary)] text-[var(--accent-text)]"
+                        }`}
+                    >
+                        {isDark ? (
+                            <FiMoon className="w-[18px] h-[18px]" />
+                        ) : (
+                            <FiSun className="w-[18px] h-[18px]" />
+                        )}
+                    </button>
 
 					{/* Mobile Menu */}
 					<button type="button" aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"} onClick={() => setIsMobileMenuOpen((open) => !open)} 
